@@ -1,0 +1,33 @@
+/* 
+    Created on : Aug 25, 2016, 12:53:08 AM
+    Author     : Andre
+*/
+
+.header{
+    width:800px;
+    margin:auto;
+    text-align:center;
+}
+.header > img{
+    padding:10px 0px 10px 0px;
+}
+table{
+    margin:auto;
+}
+th > a {
+    font-size:23px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+#address{
+    width:200px;
+    float:left;
+    margin:0px 0px 0px 20px;
+}
+
+#contacts{
+    width:200px;
+    float:right;
+    margin:0px 20px 0px 0px;
+}
