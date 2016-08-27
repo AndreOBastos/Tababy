@@ -7,16 +7,15 @@ html,body{
     height:100%;
     overflow:auto;
 }
-.logo{
+.header{
     top: 0px;
     width:100%; 
     text-align:center;
     background: url('../img/bottom.png') repeat-x bottom left, url('../img/header.png') repeat top left;
     padding-bottom: 30px;
 }
-.logo > a{
+.logo{
     padding:20px 0px 20px 0px;
-    width:600px;
     margin:auto;
 }
 
@@ -25,19 +24,8 @@ nav{
     height: 85px;
 }
 
-li a{
+li a, li a:hover, li a:visited{
     text-decoration:none;
-}
-
-#address{
-    text-align: center;
-    width:200px;
-    float:left;
-}
-
-#contacts{
-    width:200px;
-    float:right;
 }
 
 .footerContainer{
@@ -51,6 +39,7 @@ li a{
 
 .footerContainer *{
     margin:40px 0 0 0;
+    text-align:center;
 }
 
 .footer{
@@ -62,5 +51,4 @@ li a{
 .content{
     padding: 60px 0px 60px 0px;
     margin:auto;
-    width:70%;
 }
