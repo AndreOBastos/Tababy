@@ -81,8 +81,21 @@ p{
 }
 
 .map{
-    width:522px;
-    height:402px;
     margin:auto;
-    border: 1px solid grey;
+    overflow:hidden;
+    height:400px;
+    width:520px;
+}
+#gmap_canvas{
+    height:400px;
+    width:520px;
+}
+
+@media screen 
+and (min-width : 320px) 
+and (max-width : 480px) {
+    .map, #gmap_canvas{
+         width: 280px;
+         height: 250px;
+    }  
 }
