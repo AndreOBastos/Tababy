@@ -50,6 +50,10 @@ nav li.last{
     margin:0;
 }
 
+p{
+    text-indent: 30px;
+}
+
 .footerContainer{
     bottom:0;
     text-align:center;
@@ -74,4 +78,11 @@ nav li.last{
 .content{
     padding: 60px 0px 60px 0px;
     margin:auto;
+}
+
+.map{
+    width:522px;
+    height:402px;
+    margin:auto;
+    border: 1px solid grey;
 }

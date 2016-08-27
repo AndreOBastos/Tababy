@@ -4,49 +4,84 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html lang="pt">
     <head>
         <title>Loja Tababy</title>
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="js/jquery-3.1.0.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="js/bootstrap.js"></script>
         <link rel="stylesheet" type="text/css" href="css/page.css">
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyC6U2DZTIXlydkzFoOpxhtsVh_e5GnUwOs'></script>
+        <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+        <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5764abc427c0ed4b35416aa224d073b2e10cc64e'></script>
+        <script type='text/javascript'>function init_map(){var myOptions = {zoom:15,center:new google.maps.LatLng(-3.7318883,-38.54977259999998),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(-3.7318883,-38.54977259999998)});infowindow = new google.maps.InfoWindow({content:'<strong>Lojas Tababy</strong><br>Rua Conrado Cabral, 788<br> Fortaleza<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+
     </head>
     <body>
         <div class="header">
-            <img src="img/tababy.png" alt="Logotipo Tababy">
-            <div class="menu">
-                <table>
-                    <tr>
-                        <th>
-                            <a href='index.html'>Home</a>
-                        </th>
-                        <th>
-                            <a href='produtos.html'>Produtos</a>
-                        </th>
-                        <th>
-                            <a href='sobre.html'>Sobre</a>
-                        </th>
-                        <th>
-                            <a href='localizacao.html'>Localização</a>
-                        </th>
-                        <th>
-                            <a href='contato.html'>Contato</a>
-                        </th>
-                    </tr>
-                </table>
+                <a href="index.html">
+                    <img class="img-responsive center-block" src="img/tababy.png" alt="Logotipo Tababy">
+                </a>
+            <nav>
+                <ul class="list-inline">
+                    <li>
+                        <a href='index.html'>Home</a>
+                    </li>
+                    <li>
+                        <a href='produtos.html'>Produtos</a>
+                    </li>
+                    <li>
+                        <a href='sobre.html'>Sobre</a>
+                    </li>
+                    <li>
+                        <a href='localizacao.html'>Localização</a>
+                    </li>
+                    <li class="last">
+                        <a href='contato.html'>Contato</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="contentContainer">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-8 col-xs-offset-2">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus sed mauris sed efficitur. Vivamus consectetur urna lectus, sit amet ultrices metus tempor venenatis. Nullam malesuada iaculis nisl, ac venenatis tortor. Proin lectus libero, tincidunt nec tincidunt et, pellentesque non urna. Quisque et purus viverra, lobortis nisl id, luctus mi. In ac sodales nunc, vel convallis elit. Vivamus odio tellus, laoreet eu sagittis at, varius hendrerit est. Nullam viverra orci eu metus aliquam, a tempor diam porta. Nunc tempor metus in commodo dignissim. Donec maximus et dolor quis scelerisque. Integer dui ipsum, faucibus ac accumsan in, facilisis et ipsum. Vivamus lobortis, risus sed facilisis faucibus, elit nunc eleifend dui, sit amet maximus nulla est vel tortor.
+
+                        Sed cursus, velit nec sodales volutpat, tortor tortor varius augue, a sodales sapien ex mollis nunc. Pellentesque condimentum facilisis quam, mattis varius erat eleifend eget. Integer id dui ut orci bibendum tempor id vel ligula. Proin lobortis tellus sed ante sodales pulvinar. Aenean faucibus mauris ut cursus molestie. Nam nec accumsan elit, vitae maximus magna. Praesent faucibus, nisi sed viverra blandit, arcu magna interdum mauris, non posuere sapien elit in dolor. Nulla mi erat, ultrices in laoreet et, maximus sed lorem. Integer congue eros ut mi placerat, a egestas metus pulvinar. Mauris imperdiet quis libero nec varius.
+                        
+                        Aliquam imperdiet mi sed felis ullamcorper varius. Suspendisse fermentum vestibulum eros et suscipit. Proin bibendum imperdiet orci sed ultrices. Nunc at vulputate diam. Nam porta ante lobortis odio sodales consectetur. Suspendisse sagittis at ex sed pulvinar. Nunc interdum, nibh non vestibulum interdum, sem lectus efficitur lorem, in rutrum est lacus quis quam. Quisque tempus erat a ultricies interdum. Etiam id eros et enim tristique maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta id metus efficitur faucibus. Fusce eleifend quis nunc at egestas. Fusce quis augue et sem convallis vulputate sit amet ut ipsum. Suspendisse justo ligula, aliquam at justo ac, efficitur sagittis ipsum.
+
+                        Fusce dignissim tortor eu ipsum eleifend, dictum dapibus arcu eleifend. Sed id elit rhoncus, bibendum felis non, accumsan libero. Nullam molestie eu enim sed venenatis. Ut bibendum nibh non ex vulputate tempus. Donec nec felis tellus. Aenean posuere dui sed ex sodales tincidunt. Fusce massa turpis, auctor nec leo eget, molestie tristique odio.
+                    </div>
+                </div>
+                <div class="map">
+                    <div style='overflow:hidden;height:400px;width:520px;'>
+                        <div id='gmap_canvas' style='height:400px;width:520px;'></div>
+                    </div>
+                    <a href='http://maps-generator.com/pt'>Maps-Generator</a>
+                </div>
             </div>
         </div>
-        <div class="content">
-            
-        </div>
-        <div class="footer">
-            <div id="address">
-                Rua Conrado Cabral, 788<br>
-                Monte Castelo<br>
-                Fortaleza-CE, Brasil
-            </div>
-            <div id="contacts">
-                Facebook/Instagram
+        <div class="footerContainer">
+            <div class="footer">
+                <div class="pull-left" id="address">
+                    Rua Conrado Cabral, 788<br>
+                    Monte Castelo<br>
+                    Fortaleza-CE, Brasil
+                </div>
+                <div class="pull-right" id="contacts">
+                    Facebook/Instagram
+                </div>
             </div>
         </div>
     </body>
