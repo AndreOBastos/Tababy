@@ -7,33 +7,26 @@ html,body{
     height:100%;
     overflow:auto;
 }
-.header{
+.logo{
     top: 0px;
     width:100%; 
     text-align:center;
     background: url('../img/bottom.png') repeat-x bottom left, url('../img/header.png') repeat top left;
     padding-bottom: 30px;
 }
-.header > img{
-    padding:10px 0px 10px 0px;
-    width:700px;
+.logo > a{
+    padding:20px 0px 20px 0px;
+    width:600px;
     margin:auto;
 }
-table{
-    margin: 0px auto 10px auto;
+
+nav{
+    margin: 20px auto 0 auto;
+    height: 85px;
 }
-th {
-    width: 150px;
-    height: 58px;
-    text-align: center;
-    background-image:url('../img/menu-ballon.png');
-    background-size: 150px 58px;
-    background-repeat:no-repeat;
-}
-th > a:visited, th > a:hover, th> a{
-    font-size:23px;
+
+li a{
     text-decoration:none;
-    color:#555B6E;
 }
 
 #address{
@@ -50,10 +43,14 @@ th > a:visited, th > a:hover, th> a{
 .footerContainer{
     bottom:0;
     text-align:center;
-    background: url('../img/bottom.png') repeat-x bottom left, url('../img/header.png') repeat top left;
+    background: url('../img/top.png') repeat-x top left, url('../img/header.png') repeat top left;
     padding-bottom: 30px;
-    height: 150px;
+    height: 100px;
     width:100%;
+}
+
+.footerContainer *{
+    margin:40px 0 0 0;
 }
 
 .footer{
