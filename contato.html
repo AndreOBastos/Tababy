@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html lang="pt">
     <head>
         <title>Loja Tababy</title>
         
-        <!-- Latest compiled and minified CSS -->
+        <!-- Latest compiled and minified Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
 
         <!-- jQuery library -->
         <script src="js/jquery-3.1.0.min.js"></script>
 
-        <!-- Latest compiled JavaScript -->
+        <!-- Latest compiled Bootstrap JavaScript -->
         <script src="js/bootstrap.js"></script>
+        
+        <!-- Angular.js library -->
+        <script src="js/angular.min.js"></script>
+        
+        <!-- ReCaptcha -->
+        <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+        
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/page.css">
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="js/contato.js"></script>
     </head>
     <body>
         <div class="header">
@@ -45,19 +54,61 @@ and open the template in the editor.
                 </ul>
             </nav>
         </div>
-        
         <div class="contentContainer">
             <div class="content">
                 <div class="row">
-                    <div class="col-xs-8 col-xs-offset-2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus sed mauris sed efficitur. Vivamus consectetur urna lectus, sit amet ultrices metus tempor venenatis. Nullam malesuada iaculis nisl, ac venenatis tortor. Proin lectus libero, tincidunt nec tincidunt et, pellentesque non urna. Quisque et purus viverra, lobortis nisl id, luctus mi. In ac sodales nunc, vel convallis elit. Vivamus odio tellus, laoreet eu sagittis at, varius hendrerit est. Nullam viverra orci eu metus aliquam, a tempor diam porta. Nunc tempor metus in commodo dignissim. Donec maximus et dolor quis scelerisque. Integer dui ipsum, faucibus ac accumsan in, facilisis et ipsum. Vivamus lobortis, risus sed facilisis faucibus, elit nunc eleifend dui, sit amet maximus nulla est vel tortor.
-
-        Sed cursus, velit nec sodales volutpat, tortor tortor varius augue, a sodales sapien ex mollis nunc. Pellentesque condimentum facilisis quam, mattis varius erat eleifend eget. Integer id dui ut orci bibendum tempor id vel ligula. Proin lobortis tellus sed ante sodales pulvinar. Aenean faucibus mauris ut cursus molestie. Nam nec accumsan elit, vitae maximus magna. Praesent faucibus, nisi sed viverra blandit, arcu magna interdum mauris, non posuere sapien elit in dolor. Nulla mi erat, ultrices in laoreet et, maximus sed lorem. Integer congue eros ut mi placerat, a egestas metus pulvinar. Mauris imperdiet quis libero nec varius.
-
-        Aliquam imperdiet mi sed felis ullamcorper varius. Suspendisse fermentum vestibulum eros et suscipit. Proin bibendum imperdiet orci sed ultrices. Nunc at vulputate diam. Nam porta ante lobortis odio sodales consectetur. Suspendisse sagittis at ex sed pulvinar. Nunc interdum, nibh non vestibulum interdum, sem lectus efficitur lorem, in rutrum est lacus quis quam. Quisque tempus erat a ultricies interdum. Etiam id eros et enim tristique maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta id metus efficitur faucibus. Fusce eleifend quis nunc at egestas. Fusce quis augue et sem convallis vulputate sit amet ut ipsum. Suspendisse justo ligula, aliquam at justo ac, efficitur sagittis ipsum.
-
-        Fusce dignissim tortor eu ipsum eleifend, dictum dapibus arcu eleifend. Sed id elit rhoncus, bibendum felis non, accumsan libero. Nullam molestie eu enim sed venenatis. Ut bibendum nibh non ex vulputate tempus. Donec nec felis tellus. Aenean posuere dui sed ex sodales tincidunt. Fusce massa turpis, auctor nec leo eget, molestie tristique odio.
-
+                    <div class="col-xs-8 col-xs-offset-2 josefin">
+                        <p>Se você deseja mais informações, ou deseja fazer uma encomenda, entre em contato conosco das seguintes maneiras:</p>
+                        
+                        <address>
+                            <strong>Telefone:</strong><br>
+                            Ligue para um dos nossos telefones:<br>
+                            (85)99903-5958<br>
+                            (85)99689-2083<br>
+                        </address>
+                        
+                        <address>
+                            <strong>Endereço:</strong><br>
+                            Ou você pode nos visitar no nosso endereço, nos seguintes horários de funcionamento:<br>
+                            Segunda à Sexta - 08:00 às 17:00.<br>
+                            Sábado e Feriados - 08:00 às 11:30.<br>
+                            Não abrimos aos Domingos. <br>
+                        </address>
+                        
+                        <address>
+                            <strong>Rede Social:</strong><br>
+                            Você também pode nos enviar uma mensagem pela comunidade do Facebook em:<br>
+                        </address>
+                        
+                        <address>
+                            <strong>Email:</strong><br>
+                            Envie-nos um email preenchendo o formulário abaixo:<br/><br/>
+                            <form id="contactForm" data-toggle="validator" autocomplete="off" class="panel panel-default col-sm-6" method="POST" action="EmailServlet">
+                                <div class="form-group panel-body">
+                                    <label for="userEmail">Seu Email:</label><br/>
+                                    <input id="userEmail" class="form-control" type="email" required name="em" data-error="Por favor, informe um e-mail correto.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group panel-body">
+                                    <label for="emailSubject">Assunto:</label><br/>
+                                    <input id="emailSubject" class="form-control" type="text" required name="es" data-minlength="5" data-error="Por favor, o seu assunto deve possuir mais do que 5 caracteres.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group panel-body">
+                                    <label for="emailBody">Mensagem:</label><br/>
+                                    <textarea id="emailBody" class="form-control" name="eb" rows="6" maxlength="500" required data-minlength="20" data-error="Por favor, o seu assunto deve possuir mais do que 20 caracteres."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                    <p class="text-muted" id="caracteres">Número de caracteres restantes: 500</p>
+                                </div>
+                                <div class="form-group panel-body">
+                                    <p class="text-muted">Complete o reCaptcha abaixo antes de enviar o email:</p><br/>
+                                    <div class="g-recaptcha" id="recaptcha" data-sitekey="6LfAhgcUAAAAAHavtl-GACSPVZWbI_S0RuXZb8O3" data-callback="habilitarBotao"></div><br/>
+                                </div>
+                                <div class="form-group panel-body">
+                                    <button data-toggle="tooltip" data-placement="bottom" title="Complete o captcha acima para liberar o botão de envio" id="submitButton" disabled class="form-control glyphicon-envelope" type="submit"> Enviar o E-mail</button>
+                                </div>
+                            </form>
+                        </address>
                     </div>
                 </div>
             </div>

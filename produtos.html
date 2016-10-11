@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html lang="pt">
+<html lang="pt" ng-app="galeriaModule">
     <head>
         <title>Loja Tababy</title>
         
@@ -15,7 +15,12 @@ and open the template in the editor.
         <script src="js/jquery-3.1.0.min.js"></script>
 
         <!-- Latest compiled JavaScript -->
-        <script src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        
+        <!-- Angular javascripts -->
+        <script src="js/angular.min.js" type="text/javascript"></script>
+        <script src="js/angular-products.js" type="text/javascript"></script>
+        
         <link rel="stylesheet" type="text/css" href="css/page.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,15 +54,56 @@ and open the template in the editor.
         <div class="contentContainer">
             <div class="content">
                 <div class="row">
-                    <div class="col-xs-8 col-xs-offset-2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus sed mauris sed efficitur. Vivamus consectetur urna lectus, sit amet ultrices metus tempor venenatis. Nullam malesuada iaculis nisl, ac venenatis tortor. Proin lectus libero, tincidunt nec tincidunt et, pellentesque non urna. Quisque et purus viverra, lobortis nisl id, luctus mi. In ac sodales nunc, vel convallis elit. Vivamus odio tellus, laoreet eu sagittis at, varius hendrerit est. Nullam viverra orci eu metus aliquam, a tempor diam porta. Nunc tempor metus in commodo dignissim. Donec maximus et dolor quis scelerisque. Integer dui ipsum, faucibus ac accumsan in, facilisis et ipsum. Vivamus lobortis, risus sed facilisis faucibus, elit nunc eleifend dui, sit amet maximus nulla est vel tortor.
+                    <div class="col-xs-8 col-xs-offset-2 panel panel-body">
+                        <div class="row" ng-controller="GalleryController as galeria">
+                            <div class="col-lg-4 productBox" ng-repeat="produto in galeria.produtos">
+                                <div class="text-center productContent">
+                                    <h1 class="text-center produto-nome">{{produto.nome}}</h1>
+                                    <img class="img-thumbnail img-responsive" src="{{produto.thumbnailURI}}">
+                                    <p class="text-center">{{produto.descricao}}</p><br/>
+                                    <!-- Botão do Modal -->
+                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#Modal{{produto.id}}">
+                                        <span class="glyphicon glyphicon-resize-full"> Expandir</span>
+                                    </button>
 
-        Sed cursus, velit nec sodales volutpat, tortor tortor varius augue, a sodales sapien ex mollis nunc. Pellentesque condimentum facilisis quam, mattis varius erat eleifend eget. Integer id dui ut orci bibendum tempor id vel ligula. Proin lobortis tellus sed ante sodales pulvinar. Aenean faucibus mauris ut cursus molestie. Nam nec accumsan elit, vitae maximus magna. Praesent faucibus, nisi sed viverra blandit, arcu magna interdum mauris, non posuere sapien elit in dolor. Nulla mi erat, ultrices in laoreet et, maximus sed lorem. Integer congue eros ut mi placerat, a egestas metus pulvinar. Mauris imperdiet quis libero nec varius.
+                                    <!-- Modal -->
+                                    <div id="Modal{{produto.id}}" class="modal fade" role="dialog">
+                                        <div class="modal-dialog modal-lg">
+                                            <!-- Galeria dentro do Modal -->
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <div id="galeria{{produto.id}}" class="carousel slide" data-ride="carousel">
+                                                        <!-- Indicadores -->
+                                                        <ol class="carousel-indicators">
+                                                            <li ng-repeat="imagem in produto.imagens" data-target="#galeria{{produto.id}}" data-slide-to="{{$index}}" ng-class="{active:$first}"></li>
+                                                        </ol>
+                                                        <!-- Wrapper dos slides -->
+                                                        <div class="carousel-inner" role="listbox" >
+                                                            <div ng-repeat="imagem in produto.imagens" class="item" ng-class="{active:$first}">
+                                                                <img src="{{imagem}}" alt="{{produto.nome}}">
+                                                            </div>
+                                                        </div>
+                                                        <!-- Controles -->
+                                                        <a class="left carousel-control" href="#galeria{{produto.id}}" role="button" data-slide="prev">
+                                                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="right carousel-control" href="#galeria{{produto.id}}" role="button" data-slide="next">
+                                                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar Galeria</button>
+                                                </div>
+                                            </div>
 
-        Aliquam imperdiet mi sed felis ullamcorper varius. Suspendisse fermentum vestibulum eros et suscipit. Proin bibendum imperdiet orci sed ultrices. Nunc at vulputate diam. Nam porta ante lobortis odio sodales consectetur. Suspendisse sagittis at ex sed pulvinar. Nunc interdum, nibh non vestibulum interdum, sem lectus efficitur lorem, in rutrum est lacus quis quam. Quisque tempus erat a ultricies interdum. Etiam id eros et enim tristique maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta id metus efficitur faucibus. Fusce eleifend quis nunc at egestas. Fusce quis augue et sem convallis vulputate sit amet ut ipsum. Suspendisse justo ligula, aliquam at justo ac, efficitur sagittis ipsum.
-
-        Fusce dignissim tortor eu ipsum eleifend, dictum dapibus arcu eleifend. Sed id elit rhoncus, bibendum felis non, accumsan libero. Nullam molestie eu enim sed venenatis. Ut bibendum nibh non ex vulputate tempus. Donec nec felis tellus. Aenean posuere dui sed ex sodales tincidunt. Fusce massa turpis, auctor nec leo eget, molestie tristique odio.
-
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
