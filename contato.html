@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <title>Loja Tababy</title>
+        
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="js/jquery-3.1.0.min.js"></script>
+
+        <!-- Latest compiled Bootstrap JavaScript -->
+        <script src="js/bootstrap.js"></script>
+        
+        <!-- Angular.js library -->
+        <script src="js/angular.min.js"></script>
+        
+        <!-- ReCaptcha -->
+        <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+        
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/page.css">
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="js/contato.js"></script>
+    </head>
+    <body>
+        <div class="header">
+                <a href="index.html">
+                    <img class="img-responsive center-block" src="img/tababy.png" alt="Logotipo Tababy">
+                </a>
+            <nav>
+                <ul class="list-inline">
+                    <li>
+                        <a href='index.html'>Home</a>
+                    </li>
+                    <li>
+                        <a href='produtos.html'>Produtos</a>
+                    </li>
+                    <li>
+                        <a href='sobre.html'>Sobre</a>
+                    </li>
+                    <li>
+                        <a href='localizacao.html'>Localização</a>
+                    </li>
+                    <li class="last">
+                        <a href='contato.html'>Contato</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="contentContainer">
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-8 col-xs-offset-2 josefin">
+                        <p>Se você deseja mais informações, ou deseja fazer uma encomenda, entre em contato conosco das seguintes maneiras:</p>
+                        
+                        <address>
+                            <strong>Telefone:</strong><br>
+                            Ligue para um dos nossos telefones:<br>
+                            (85)99903-5958<br>
+                            (85)99689-2083<br>
+                        </address>
+                        
+                        <address>
+                            <strong>Endereço:</strong><br>
+                            Ou você pode nos visitar no nosso endereço, nos seguintes horários de funcionamento:<br>
+                            Segunda à Sexta - 08:00 às 17:00.<br>
+                            Sábado e Feriados - 08:00 às 11:30.<br>
+                            Não abrimos aos Domingos. <br>
+                        </address>
+                        
+                        <address>
+                            <strong>Rede Social:</strong><br>
+                            Você também pode nos enviar uma mensagem pela comunidade do Facebook em:<br>
+                        </address>
+                        
+                        <address>
+                            <strong>Email:</strong><br>
+                            Envie-nos um email preenchendo o formulário abaixo:<br/><br/>
+                            <form id="contactForm" data-toggle="validator" autocomplete="off" class="panel panel-default col-sm-6" method="POST" action="EmailServlet">
+                                <div class="form-group panel-body">
+                                    <label for="userEmail">Seu Email:</label><br/>
+                                    <input id="userEmail" class="form-control" type="email" required name="em" data-error="Por favor, informe um e-mail correto.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group panel-body">
+                                    <label for="emailSubject">Assunto:</label><br/>
+                                    <input id="emailSubject" class="form-control" type="text" required name="es" data-minlength="5" data-error="Por favor, o seu assunto deve possuir mais do que 5 caracteres.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group panel-body">
+                                    <label for="emailBody">Mensagem:</label><br/>
+                                    <textarea id="emailBody" class="form-control" name="eb" rows="6" maxlength="500" required data-minlength="20" data-error="Por favor, o seu assunto deve possuir mais do que 20 caracteres."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                    <p class="text-muted" id="caracteres">Número de caracteres restantes: 500</p>
+                                </div>
+                                <div class="form-group panel-body">
+                                    <p class="text-muted">Complete o reCaptcha abaixo antes de enviar o email:</p><br/>
+                                    <div class="g-recaptcha" id="recaptcha" data-sitekey="6LfAhgcUAAAAAHavtl-GACSPVZWbI_S0RuXZb8O3" data-callback="habilitarBotao"></div><br/>
+                                </div>
+                                <div class="form-group panel-body">
+                                    <button data-toggle="tooltip" data-placement="bottom" title="Complete o captcha acima para liberar o botão de envio" id="submitButton" disabled class="form-control glyphicon-envelope" type="submit"> Enviar o E-mail</button>
+                                </div>
+                            </form>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerContainer">
+            <div class="footer">
+                <div class="pull-left" id="address">
+                    Rua Conrado Cabral, 788<br>
+                    Monte Castelo<br>
+                    Fortaleza-CE, Brasil
+                </div>
+                <div class="pull-right" id="contacts">
+                    Facebook/Instagram
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
