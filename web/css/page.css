@@ -1,0 +1,69 @@
+/* 
+    Created on : Aug 25, 2016, 12:53:08 AM
+    Author     : Andre
+*/
+html,body{
+    margin:0;
+    height:100%;
+    overflow:auto;
+}
+.header{
+    top: 0px;
+    width:100%; 
+    text-align:center;
+    background: url('../img/bottom.png') repeat-x bottom left, url('../img/header.png') repeat top left;
+    padding-bottom: 30px;
+}
+.header > img{
+    padding:10px 0px 10px 0px;
+    width:700px;
+    margin:auto;
+}
+table{
+    margin: 0px auto 10px auto;
+}
+th {
+    width: 150px;
+    height: 58px;
+    text-align: center;
+    background-image:url('../img/menu-ballon.png');
+    background-size: 150px 58px;
+    background-repeat:no-repeat;
+}
+th > a:visited, th > a:hover, th> a{
+    font-size:23px;
+    text-decoration:none;
+    color:#555B6E;
+}
+
+#address{
+    text-align: center;
+    width:200px;
+    float:left;
+}
+
+#contacts{
+    width:200px;
+    float:right;
+}
+
+.footerContainer{
+    bottom:0;
+    text-align:center;
+    background: url('../img/bottom.png') repeat-x bottom left, url('../img/header.png') repeat top left;
+    padding-bottom: 30px;
+    height: 150px;
+    width:100%;
+}
+
+.footer{
+    width:80%;
+    height:100%;
+    margin:auto;
+}
+
+.content{
+    padding: 60px 0px 60px 0px;
+    margin:auto;
+    width:70%;
+}
